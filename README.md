@@ -120,7 +120,8 @@ Let's suppose you have one collection on your website named 'blog'.
 For all posts set attribute at the top of the Markdown file (this is set between triple-dashed lines) *locale: 'locale_code'*. You need to set it for all locales even if *slugifyDefaultLocale: false*. For example, both for `/blog/en/post.md` and `/blog/post.md` you will set `locale: 'en'`.
 
 **Edit gridsome.config.js**
-`collections: ['blog']`
+
+Add all your collections name in option *collections*, e.g. `collections: ['blog']`
 
 **Filter posts**
 Let's say you have page for blog with list of all posts *./src/pages/blog.vue*. To show only posts with current locale you need to filter it while quering. e.g.
