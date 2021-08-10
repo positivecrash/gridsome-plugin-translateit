@@ -37,7 +37,7 @@ module.exports = {
 
 ### 2. Create and edit routes.yaml
 
-All pathes for pages that you need translate. Use option `typename: 'page'` for text page or `typename: 'component'` for collecvtion page (this option is required for correct path translation).
+All pathes for pages that you need translate. Use option `typename: 'page'` for text page or `typename: 'component'` for collection page (this option is required for correct path translation).
 
 ```yaml
 - path: '/'
@@ -69,7 +69,7 @@ For example, let's add translation for the title on Index page **./src/pages/ind
 <h1 v-if="$ts('index_title')">{{$ts('index_title')}}</h1>
 ```
 
-*2 way (with fallback in case you will decide to delete plugin):*
+*2 way (with extra fallback):*
 ```html
 <h1>
     <template v-if="$ts('index_title')">{{$ts('index_title')}}</template>
@@ -177,4 +177,4 @@ Set `slugifyDefaultLocale: false` while configuring your project to save your pa
 
 ### Troubleshoting
 
-If you have any troubles, [create issue](https://github.com/positivecrash/gridsome-plugin-translateit) on Github
+If you have any troubles, [create issue](https://github.com/positivecrash/gridsome-plugin-translateit/issues) on Github
