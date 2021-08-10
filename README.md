@@ -27,6 +27,7 @@ module.exports = {
                 slugifyDefaultLocale: false, // this is default; set 'true' if you want to add locale to all pathes, including default
                 translations: yaml.load(fs.readFileSync('./src/data/locales/translations.yaml', 'utf8')),
                 collections: ['blog'], // any collection name
+                exclude: ["/404/", "/sitemap.xml/"],
                 routes: yaml.load(fs.readFileSync('./src/data/locales/routes.yaml', 'utf8')),
             }
         }
@@ -173,6 +174,14 @@ export default {
 ### Path translation
 
 Set `slugifyDefaultLocale: false` while configuring your project to save your pathes on websites clean by default. It is helpfull if you are translating already existing website, so you don't need to redirect pathes from default to translated.
+
+### Exclude
+
+Some routes plugin can ignore. 404 page and sitemap.xml are set no to translate by default.
+
+So e.g. path website-url/sitemap.xml will remain without translations.
+
+You still can use `$ts()` helper within 404, content will be translated but pathes are not.
 
 
 ### Troubleshoting
