@@ -24,10 +24,10 @@ module.exports = {
             options: {
                 locales: ["en", "ru", "zh"],
                 defaultLocale: "en",
-                slugifyDefaultLocale: false, // this is default; set 'true' if you want to add locale to all pathes, including default
+                slugifyDefaultLocale: false, // this is default value; set 'true' if you want to add locale to all pathes, including default
                 translations: yaml.load(fs.readFileSync('./src/data/locales/translations.yaml', 'utf8')),
                 collections: ['blog'], // any collection name
-                exclude: ["/404/", "/sitemap.xml/"],
+                exclude: ["/404/", "/sitemap.xml/"], // this is default value
                 routes: yaml.load(fs.readFileSync('./src/data/locales/routes.yaml', 'utf8')),
             }
         }
@@ -115,9 +115,31 @@ Let's suppose you have one collection on your website named 'blog'.
         |_post.md
 ```
 
+or
+
+```
+--- blog
+    |_images
+    |_ en
+        |_post.md
+    |_ ru
+        |_post.md
+    |_ zh
+        |_post.md
+```
+
 **Set attribute for post**
 
 For all posts set attribute at the top of the Markdown file (this is set between triple-dashed lines) *locale: 'locale_code'*. You need to set it for all locales even if *slugifyDefaultLocale: false*. For example, both for `/blog/en/post.md` and `/blog/post.md` you will set `locale: 'en'`.
+
+```yaml
+---
+title: The post title
+date: 2021-08-04
+published: true
+locale: 'en'
+---
+```
 
 **Edit gridsome.config.js**
 
