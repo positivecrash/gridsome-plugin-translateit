@@ -124,6 +124,7 @@ For all posts set attribute at the top of the Markdown file (this is set between
 Add all your collections name in option *collections*, e.g. `collections: ['blog']`
 
 **Filter posts**
+
 Let's say you have page for blog with list of all posts *./src/pages/blog.vue*. To show only posts with current locale you need to filter it while quering. e.g.
 
 ```js
@@ -145,6 +146,7 @@ query ($locale: String!) {
 }
 </page-query>
 ```
+
 
 ### 6. Helpers
 
