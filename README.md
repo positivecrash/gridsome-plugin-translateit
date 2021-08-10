@@ -125,10 +125,10 @@ For all posts set attribute at the top of the Markdown file (this is set between
 
 You can manipulate locales, translate strings, translate paths within components.
 
-`$locale` – current locale
-`$ts('text')` – translate string; translations are taken from the file in config `translations: ...`
-`$tp(path_without_locale)` – path will automatically generated with current locale
-`$setLocale(new_locale)` – set new locale
+- `$locale` – current locale
+- `$ts('text')` – translate string; translations are taken from the file in config `translations: ...`
+- `$tp(path_without_locale)` – path will automatically generated with current locale
+- `$setLocale(new_locale)` – set new locale
 
 ### 7. Example of switcher component
 
