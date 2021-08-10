@@ -1,0 +1,25 @@
+{
+  "name": "gridsome-plugin-translateit",
+  "version": "1.0.0",
+  "description": "This package helps to add multilanguage support to the website built with Gridsome.",
+  "main": "gridsome.server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gridsome",
+    "gridsome-plugin",
+    "translate",
+    "localization",
+    "multilangual"
+  ],
+  "author": "Anastasiia Bakai @positivecrash",
+  "license": "BSD 3-Clause",
+  "files": [
+    "gridsome.client.js",
+    "gridsome.server.js"
+  ],
+  "dependencies": {
+    "core-js": "^3.16.0"
+  }
+}
