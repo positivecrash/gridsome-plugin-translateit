@@ -78,7 +78,7 @@ export default function (Vue, options, { appOptions, router, head }) {
         const pathWithoutLocale = newPathSegments.join('/')
     
         // Check if the path need to be translated
-        if( (options.exclude.length > 0 && options.exclude.includes(pathWithoutLocale)) ){
+        if( (options.exclude.length > 0 && options.exclude.includes(pathWithoutLocale)) || (!options.slugifyDefaultLocale && targetLocale === locale) ){
             return pathWithoutLocale
         }
         else {
