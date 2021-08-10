@@ -122,6 +122,29 @@ For all posts set attribute at the top of the Markdown file (this is set between
 **Edit gridsome.config.js**
 `collections: ['blog']`
 
+**Filter posts**
+Let's say you have page for blog with list of all posts *./src/pages/blog.vue*. To show only posts with current locale you need to filter it while quering. e.g.
+
+```js
+<page-query>
+query ($locale: String!) {
+  
+  posts: allPost(filter: { published: { eq: true }, locale: { eq: $locale } }) {
+    edges {
+      node {
+        id
+        title
+        date (format: "D. MMMM YYYY")
+        description
+        cover_image (width: 1500, quality: 100)
+        path
+      }
+    }
+  }
+}
+</page-query>
+```
+
 ### 6. Helpers
 
 You can manipulate locales, translate strings, translate paths within components.
