@@ -71,3 +71,5 @@ module.exports = {
     <template v-else>This is some awesome title</template>
 </h1>
 ```
+
+You don't need to create any other files for pages. Localized pages will be generated automatically.
