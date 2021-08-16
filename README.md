@@ -69,7 +69,7 @@ For example, let's add translation for the title on Index page **./src/pages/ind
 <h1 v-if="$ts('index_title')">{{$ts('index_title')}}</h1>
 ```
 
-* You don't need to create any other files for pages, just usee routes.yaml to share with plugin your plans. Localized pages will be generated automatically from routes.yaml.
+* You don't need to create any other files for pages, just use routes.yaml to share with plugin your plans. Localized pages will be generated automatically from routes.yaml.
 * If for some reason there is no translation for current alias, plugin will insert alias text. E.g. `$ts('This is title')` will display `This is title` for all languages, if there is no alias 'This is title'.
 
 ### 5. Create collections
