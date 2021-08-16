@@ -167,6 +167,7 @@ query ($locale: String!) {
 You can manipulate locales, translate strings, translate paths within components.
 
 - `$locale` – current locale
+- `$defaultLocale` – default locale
 - `$ts('text')` – translate string; translations are taken from the file in config `translations: ...`
 - `$tp(path_without_locale)` – path will automatically generated with current locale
 - `$setLocale(new_locale)` – set new locale
