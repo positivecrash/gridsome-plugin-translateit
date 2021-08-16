@@ -113,10 +113,18 @@ export default function (Vue, options, { appOptions, router, head }) {
             return
         }
 
+        let hasAlias = 0
+
         for (const item of options.translations) {
           if (item.alias === alias){
+            hasAlias++
             return eval(`item.${locale}`)
           }
+        }
+
+        // If for some reason there is no translation for current alias, plugin will insert alias text
+        if(hasAlias == 0) {
+            return alias;
         }
 
     }

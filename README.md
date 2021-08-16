@@ -65,20 +65,12 @@ All pathes for pages that you need translate. Use option `typename: 'page'` for 
 
 For example, let's add translation for the title on Index page **./src/pages/index.vue**
 
-*1 way:*
 ```html
 <h1 v-if="$ts('index_title')">{{$ts('index_title')}}</h1>
 ```
 
-*2 way (with extra fallback):*
-```html
-<h1>
-    <template v-if="$ts('index_title')">{{$ts('index_title')}}</template>
-    <template v-else>This is some awesome title</template>
-</h1>
-```
-
-You don't need to create any other files for pages. Localized pages will be generated automatically.
+* You don't need to create any other files for pages. Localized pages will be generated automatically.
+* If for some reason there is no translation for current alias, plugin will insert alias text. E.g. `$ts('This is title')` will display `This is title` for all languages, if there is no alias 'This is title'.
 
 ### 5. Create collections
 
