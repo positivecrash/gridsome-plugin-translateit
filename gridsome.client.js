@@ -6,8 +6,9 @@ export default function (Vue, options, { appOptions, router, head }) {
         throw new Error(`TranslateIt plugin is missing a required "locales" option.`)
     }
 
-    // helper for components
+    // helpers for components
     Vue.prototype.$localesList = options.locales
+    Vue.prototype.$defaultLocale = options.defaultLocale
 
     // is set in initLocale()
     let locale
