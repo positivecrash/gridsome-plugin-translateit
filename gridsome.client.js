@@ -119,7 +119,14 @@ export default function (Vue, options, { appOptions, router, head }) {
         for (const item of options.translations) {
           if (item.alias === alias){
             hasAlias++
-            return eval(`item.${locale}`)
+            
+            // Check if there is translation for current alias, if no show default locale string
+            if (eval(`item.${locale}`)){
+                return eval(`item.${locale}`)
+            }
+            else {
+                return eval(`item.${options.defaultLocale}`)
+            }
           }
         }
 
