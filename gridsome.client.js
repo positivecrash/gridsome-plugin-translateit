@@ -17,7 +17,7 @@ export default function (Vue, options, { appOptions, router, head }) {
     function setLocale(lang) {
         locale = lang // update variable for plugin
         Vue.prototype.$locale = locale // update helper
-        localStorage.setItem('locale', locale) // update browser preference
+        // localStorage.setItem('locale', locale) // update browser preference (not used now)
     }
     // helper
     Vue.prototype.$setLocale = setLocale
@@ -43,21 +43,21 @@ export default function (Vue, options, { appOptions, router, head }) {
        
         if(process.isClient) {
 
-            // Check if we have saved preferences of user
-            if( localStorage.locale && localStorage.locale !== 'undefined') {
-                setLocale(localStorage.locale)
+            // 1) try get locales from url
+
+            const browserUrl = splitPath(window.location.href)
+            const localeFromBrowser = browserUrl.filter(el => options.locales.includes(el))[0] // in case there are several locales in url, we get first
+            if(localeFromBrowser) {
+                setLocale(localeFromBrowser)
             }
-            else {
-                // If no preferences, try get locales from url
-                const browserUrl = splitPath(window.location.href)
-                const localeFromBrowser = browserUrl.filter(el => options.locales.includes(el))[0] // in case there are several locales in url, we get first
-                if(localeFromBrowser) {
-                    setLocale(localeFromBrowser)
-                }
-                else{
-                    // if non of these conditions are worked, locale will remain default
-                    setLocale(options.defaultLocale)
-                }
+            else{
+                // 2) Check if we have saved preferences of user - this now not available
+                // if( localStorage.locale && localStorage.locale !== 'undefined') {
+                //     setLocale(localStorage.locale)
+                // }
+
+                // if non of these conditions are worked, locale will remain default
+                setLocale(options.defaultLocale)
             }
         }
 
